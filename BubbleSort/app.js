@@ -22,8 +22,6 @@ let bubbleSortChart = new Chart("myChart", {
     }
 });
 
-
-
 $("#start").on('click', function(){
     delay = $("#delay").val()
     if(delay < 0)
@@ -62,17 +60,11 @@ $("#GenerateNewItem").on('click', function(){
     });
 });
 
-
 function generateNewArray(lenght) {
     return Array.apply(null, Array(parseInt(lenght))).map(function (item, index) {
         return Math.floor(Math.random() * 100);
     });
 }
-
-
-
-
-
 
 function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -95,6 +87,8 @@ async function bubbleSort(numbers) {
                 everythingSorted = false;
             }
             await sleep(delay);
+            bubbleSortChart.data.datasets[0].backgroundColor[i] = "pink"
+            bubbleSortChart.update();
         }
         runs++;
 
