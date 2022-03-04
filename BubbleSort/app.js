@@ -1,5 +1,5 @@
 
-let arrayItems = Array.apply(null, Array(30)).map(function (item, index) {
+let arrayItems = Array.apply(null, Array(15)).map(function (item, index) {
     return Math.floor(Math.random() * 100);
 });
 let delay = 250;
