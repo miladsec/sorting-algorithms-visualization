@@ -1,0 +1,6 @@
+[
+    {"id": 1, "sortName": "Bubble sort"},
+    {"id": 2, "sortName": "Selection sort"},
+    {"id": 3, "sortName": "Quick sort"},
+    {"id": 4, "sortName": "Merge sort"}
+]
