@@ -22,25 +22,23 @@ let bubbleSortChart = new Chart("myChart", {
     }
 });
 
-$("#start").on('click', function(){
-    delay = $("#delay").val()
-    if(delay < 0)
-        delay = 500
-
-    bubbleSort(arrayItems)
-});
 
 $("#reset").on('click', function(){
     location.reload(true);
 });
 
-$("#GenerateNewItem").on('click', function(){
+$("#start").on('click', function(){
+    $("#start").prop('disabled', true);
+    delay = $("#delay").val()
+    if(delay < 0)
+        delay = 500
 
     let length = $("#length").val()
     if(length <= 0 || length > 200)
         length = 50
     
     arrayItems = generateNewArray(length);
+
     bubbleSortChart = new Chart("myChart", {
         type: "bar",
         data: {
@@ -58,6 +56,9 @@ $("#GenerateNewItem").on('click', function(){
             }
         }
     });
+
+    
+    bubbleSort(arrayItems)
 });
 
 function generateNewArray(lenght) {
@@ -99,3 +100,5 @@ async function bubbleSort(numbers) {
         }
     }
 }
+
+
