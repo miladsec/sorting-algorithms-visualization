@@ -24,33 +24,59 @@
 
 <body>
   <div class="container-fluid">
+
+
+    <header>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link current-sort active" href="#">Bubble sort</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Sorting algorithms</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item sorting-algorithm" data-sort="1" href="#">Bubble sort</a>
+            <a class="dropdown-item sorting-algorithm disabled" data-sort="2" href="#">Selection sort</a>
+            <a class="dropdown-item sorting-algorithm disabled" data-sort="3" href="#">Quick sort</a>
+            <a class="dropdown-item sorting-algorithm disabled" data-sort="4" href="#">Merge sort</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item disabled" href="#">Insertion sort</a>
+          </div>
+        </li>
+      </ul>
+    </header>
+
+
     <div class="row justify-content-center">
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="formControlRange">length</label>
+          <input id="length" value="15" min="2" max="200" type="range" class="w-100 form-control-range"
+            id="formControlRange">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="formControlRange">Delay</label>
+          <input id="delay" value="250" min="0" max="10000" type="range" class="w-100 form-control-range"
+            id="formControlRange">
+        </div>
+      </div>
+
+        
+      <div class="col-md-12 mb-5 text-center align-self-center mx-auto">
+        <button type="button" class="btn btn-info btn-lg" id="start">Start</button>
+        <button type="button" class="btn btn-secondary" id="reset">Reset</button>
+      </div>
+
+      </div>
+      
       <div class="col-12">
         <canvas id="myChart" style="width:100%;max-width:1200px"></canvas>
       </div>
 
-      <div class="col-12 mb-5">
-        <button type="button" class="btn btn-primary" id="start">Start</button>
-        <button type="button" class="btn btn-secondary" id="reset">Reset</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <div class="input-group input-group-sm mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Length</span>
-          <input type="number" value="15" class="form-control" aria-label="Sizing example input" id="length"
-            aria-describedby="inputGroup-sizing-sm">
-        </div>
-
-        <div class="input-group input-group-sm mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Delay</span>
-          <input type="number" value="250" class="form-control" aria-label="Sizing example input" id="delay"
-            aria-describedby="inputGroup-sizing-sm">
-        </div>
-
-        <button type="button" class="btn btn-info mb-1" id="GenerateNewItem">Generate new item (Apply new
-          config)</button>
-      </div>
     </div>
   </div>
 
@@ -62,8 +88,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
+  <script src="./Assets/shared.js"></script>
   <script src="./app.js"></script>
-
 </body>
 
 </html>
